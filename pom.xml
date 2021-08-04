@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent pom (spring-boot-starter-parent project) is a special starter 
+		project that supplies default configuration for Spring based applications 
+		and a dependency tree to quickly build your project. -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.3</version>
+	</parent>
+
+	<groupId>com.mysql.springboot</groupId>
+	<artifactId>springboot-hikari-jdbc-mysql</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>springboot-hikari-jdbc-mysql</name>
+	<url>http://maven.apache.org</url>
+	<developers>
+		<developer>
+			<name>Metanoia</name>
+		</developer>
+	</developers>
+
+	<dependencies>
+
+		<!-- Spring Boot feature to provide dependencies,starters,libraries for 
+			connecting an application with JDBC. DataSource,JdbcTemplate, NamedParameterJdbcTemplate 
+			will be auto-configured and created during application start-up. Exclude 
+			tomcat jdbc connection pool, use HikariCP -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Jdbc Type 4 driver for MySQL Database Connection -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.26</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>springboot-hikari-jdbc-mysql</finalName>
+
+		<plugins>
+
+			<!-- Spring Boot support in Apache Maven.Allows to package executable 
+				jar or war archives,run Spring Boot applications,generate build information 
+				etc. -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+	<!-- Explicit declaration to manage/override the dependencies version as 
+		provided by spring boot starter parent project. -->
+	
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- HikariCP - A lightweight (at roughly 130Kb) and lightning-fast JDBC 
+				connection pooling framework. In Spring Boot 2, Hikari is the default DataSource 
+				implementation. -->
+			<dependency>
+				<groupId>com.zaxxer</groupId>
+				<artifactId>HikariCP</artifactId>
+				<version>5.0.0</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+
+</project>
