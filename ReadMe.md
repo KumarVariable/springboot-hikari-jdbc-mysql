@@ -1,10 +1,10 @@
-<h2> <em>Access MySQL Database with SpringBoot using HikariCP<sup><sup>&nbsp;<B>It's Faster.</B></sup></sup> connection pooling </em></h2>
+<h2> <em>SpringBoot MySQL Database Integration using HikariCP<sup><sup>&nbsp;<B>It's Faster.</B></sup></sup> connection pooling </em></h2>
 
-<h3> Sample Application with SpringBoot - JDBC - HikariCP - MySQL </h3>
+<h3> Sample Application with SpringBoot <-> JDBC <-> HikariCP <-> MySQL </h3>
 
 Fast, simple, reliable.  [HikariCP](https://github.com/brettwooldridge/HikariCP/wiki/Down-the-Rabbit-Hole) is a "zero-overhead" production ready JDBC connection pool.  At roughly 130Kb, the library is very light.
 
-<h3> Project Requiremets </h3>
+<h3> Project Requirements </h3>
 
 - [Amazon Corretto](https://docs.aws.amazon.com/corretto/) - JDK 1.8+ or higher.
 - [Apache Maven 3.8.1 ](https://maven.apache.org/download.cgi) - Maven Build Tool.
@@ -15,7 +15,7 @@ Fast, simple, reliable.  [HikariCP](https://github.com/brettwooldridge/HikariCP/
 
 <h3> HikariCP Maven Dependency </h3>
 
-<em><B>Java 11+ maven artifact:</B></em>
+<em><B>Maven artifact:</B></em>
 
 ```xml
 <dependency>
@@ -45,11 +45,11 @@ This application requires Java 1.8+ , Maven build tool, MySQL 5.7x must be insta
 ..\springboot-hikari-jdbc-mysql> mvn clean package -e -U
 
 ```
-- Navigate to **BootHikariMySqlApplication.java** in your IDE and run this class as Java or SpringBoot application.
+- Navigate to <B> `BootHikariMySqlApplication.java` </B> in your IDE and run this class as Java or SpringBoot application.
 
 <h3> License </h3>
 
-The beautiful thing about open source programming community is that its always free.
+Licensed under GNU General Public License v3.0. Please see [LICENSE](LICENSE) for details.
 
 
 **Happy Learning!**
